@@ -1,0 +1,37 @@
+Package: linux-headers-7.1.5-zen1-oddnetkernel-zen
+Source: linux-upstream
+Version: 7.1.5-zen1-2
+Architecture: amd64
+Maintainer: oddsoul <oddsoul@beanbox>
+Installed-Size: 56520
+Filename: repo/pool/main/linux-headers-7.1.5-zen1-oddnetkernel-zen_7.1.5-zen1-2_amd64.deb
+Size: 9631448
+MD5sum: ef3cf2b8f5037b036499210dec2963e7
+SHA1: 1c7e9e03b5190f64f1b81e63eaa26262894b272c
+SHA256: aa64a4b59dd1c755b92c05976dd2f2e93236b05b3cf679e67543ae95ea24c50d
+Section: kernel
+Priority: optional
+Homepage: https://www.kernel.org/
+Description: Linux kernel headers for 7.1.5-zen1-oddnetkernel-zen on amd64
+ This package provides kernel header files for 7.1.5-zen1-oddnetkernel-zen on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-image-7.1.5-zen1-oddnetkernel-zen
+Source: linux-upstream
+Version: 7.1.5-zen1-2
+Architecture: amd64
+Maintainer: oddsoul <oddsoul@beanbox>
+Installed-Size: 32368
+Filename: repo/pool/main/linux-image-7.1.5-zen1-oddnetkernel-zen_7.1.5-zen1-2_amd64.deb
+Size: 23933100
+MD5sum: 327f923029252438946d7b026e03435b
+SHA1: fc15eaa3d690e9c47879cc9b9549f65853d228d0
+SHA256: 0cff50815455e78b5243a47da8268f91bc76f76dd1ad025fe93bb8ae447158e4
+Section: kernel
+Priority: optional
+Homepage: https://www.kernel.org/
+Description: Linux kernel, version 7.1.5-zen1-oddnetkernel-zen
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 7.1.5-zen1-oddnetkernel-zen.
+

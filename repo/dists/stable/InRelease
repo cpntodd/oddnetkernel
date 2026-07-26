@@ -1,0 +1,44 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Architectures: amd64
+Codename: trixie
+Components: main
+Date: Sun, 26 Jul 2026 07:34:52 +0000
+Description: Oddsoul's custom Zen kernel for Debian
+Label: oddnetkernel
+Origin: oddnetkernel
+Suite: stable
+MD5Sum:
+ 501478e8be5b7939430584ee01081f10              200 Release
+ 6a599eb9f46ad1bc8342c0b20f6acadd             1425 main/binary-amd64/Packages
+ f1e66bf305f234bcdb6c8c8be268fcd7              625 main/binary-amd64/Packages.gz
+SHA1:
+ 8b3f7b28cb74f4e1054c055f7f7df264ef7ecb95              200 Release
+ b33d1475372824d0b10e3c9daddf5c267516c7a6             1425 main/binary-amd64/Packages
+ e5139d93047773c2af7c0169efa44b422dfb02e7              625 main/binary-amd64/Packages.gz
+SHA256:
+ 5618a9f8d482954c1a6320adac388295cee6d6f00e08eb63b2a37667bfa440b4              200 Release
+ d3e744245f786ebd07675c4727327f7bc1f1f30f25017de0d193588c41ecfca2             1425 main/binary-amd64/Packages
+ 0d7850b50b6c35c1137afe4f43ead1640731b7c16aa19f990c687a62f023620c              625 main/binary-amd64/Packages.gz
+SHA512:
+ bf7923ade794bf17928132ab67df109466f69684d15bcd7361fa69b7911a3eabbff3490aa8cd6cdddb08b4a0f981bed3e5c75c6c19b1ad2c514cb341efa65ab4              200 Release
+ adec7417505795e0996557a5b6837a4725af08dd4f53625c32365cfe70f86472b8e19d8399717a78b21c6809bfac9a86237de8df99c461d97ac9449673b651e7             1425 main/binary-amd64/Packages
+ 9d892dc0a1b8dbeff70903bfa61762869125012cfb70a6433ebf2c7659d93c5e37104343e5cf095e3591a6f7474fd4e7847e5946df77b060ed1ba4b16a7583f2              625 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQJVBAEBCgA/FiEEYSjNNaonlL3y0i2az9aCiv3oFqIFAmpluKohHGNwbnRvZGRA
+dXNlcnMubm9yZXBseS5naXRodWIuY29tAAoJEM/Wgor96Bai7HAQAMI5W1MIxMLl
+jbdBRcWIvOaHNaCkEZdaWlDmXTUbOpfm9lQA5U/k6Q2WF5KxuGs8aHjxjiFlJunx
+HLx9Q0yD6RdcuMLvqSH7BDVt332qKd3Jvreatoy8URulJIlhLczXXvd9JrC0RorI
+J1xyZE2VHn2MiZWS1HZZafyQHJBIjWa5LKjN8SleVBZNeibYDpB85Cu6XNuSSmOk
+nP/IiiY1faFWHBt5hD14hR64IZdrnjU+v5msSlFddCjCCnRaeFAPcAoT0E2RzJku
+3ragCFCkU7AOFkV5kf8FSDyQivSYd6RAozOWzIpKaO3vUFU5S5RrdKwlcXrn0aoA
+g0RMi5EFnTPN5+ZDUQ6558H4DlGEDMxkzJdSKJmOuTCQ2Sg/bNPVg/KGVFPrRVvm
+vn3RSfbA8qGMe6jIDBt2eq2rBesXyvjoc18YdnCO9ffYfQDUIoiuBHHD5RXwOOXb
+Zt/9cMLlxUZUyvutefeezX9KNnpyeTM5geQuNbgumyXszqzGZi4umVQrL9gi9zAh
+URWHJYI2DjVDTPELMtn8kPMe/vKoNHNxibV2aaX8YbZEJ/qkFEdiaPeobVGnKxTY
+pq66CtEk5N53Z0ZgypOIaCUeEwrH7thE/HVQa1Hv/gAbQXGc2gbAzflrYJ7AY4zA
+JXZbCzGlP+lNRY9dZknbD6H/uVzHcbQh
+=W14z
+-----END PGP SIGNATURE-----
