@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=VT323&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+    </style>
+    <!-- Scanline pattern -->
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect y="0" width="4" height="2" fill="#000000" opacity="0.06"/>
+    </pattern>
+    <filter id="crt">
+      <feGaussianBlur stdDeviation="0.3"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="ansiFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f09040" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f09040" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" fill="#1e1e1e"/>
+
+  <!-- Subtle border -->
+  <rect x="20" y="20" width="1160" height="360" fill="none" stroke="#3e3e42" stroke-width="0.5" rx="2"/>
+
+  <!-- CRT scanline overlay -->
+  <rect width="1200" height="400" fill="url(#scanlines)" filter="url(#crt)"/>
+
+  <!-- Top-left corner decoration: block chars -->
+  <text x="20" y="25" font-family="monospace" font-size="12" fill="#2d2d2d">┌</text>
+  <text x="1180" y="25" font-family="monospace" font-size="12" fill="#2d2d2d">┐</text>
+  <text x="20" y="398" font-family="monospace" font-size="12" fill="#2d2d2d">└</text>
+  <text x="1180" y="398" font-family="monospace" font-size="12" fill="#2d2d2d">┘</text>
+
+  <!-- Title: ANSI-style box header -->
+  <!-- Top border of title box -->
+  <text x="50" y="70" font-family="monospace" font-size="14" fill="#f09040" opacity="0.6">╔══════════════════════════════════════════════════════╗</text>
+
+  <!-- Title box content -->
+  <text x="68" y="100" font-family="monospace" font-size="14" fill="#d4d4d4">║ <tspan fill="#ffffff" font-weight="bold">oddnetkernel</tspan> — Zen kernel for AMD desktops on Debian  ║</text>
+  <text x="68" y="122" font-family="monospace" font-size="14" fill="#6a6a6a">║                                                    ║</text>
+  <text x="68" y="144" font-family="monospace" font-size="14" fill="#9d9d9d">║      Ryzen 5 2600  •  RX 570  •  7.1.5-zen1       ║</text>
+
+  <!-- Bottom border of title box -->
+  <text x="50" y="168" font-family="monospace" font-size="14" fill="#f09040" opacity="0.6">╚══════════════════════════════════════════════════════╝</text>
+
+  <!-- System stats panel -->
+  <text x="50" y="210" font-family="monospace" font-size="14" fill="#f09040" filter="url(#glow)">┌─ HARDWARE ─────────────────────────────────────────┐</text>
+
+  <!-- CPU line with block utilization bar -->
+  <text x="56" y="238" font-family="monospace" font-size="13" fill="#d4d4d4">│ <tspan fill="#f09040">CPU</tspan>  <tspan fill="#9d9d9d">AMD Ryzen 5 2600 (Zen+)</tspan></text>
+
+  <!-- Block utilization bar for CPU -->
+  <text x="56" y="258" font-family="monospace" font-size="13" fill="#d4d4d4">
+    │   <tspan fill="#f09040">████████████████████████████████</tspan><tspan fill="#3e3e42">░░░░░░░</tspan> <tspan fill="#f09040" font-size="11">82%</tspan>
+  </text>
+
+  <text x="56" y="282" font-family="monospace" font-size="13" fill="#d4d4d4">│ <tspan fill="#f5a623">GPU</tspan>  <tspan fill="#9d9d9d">Radeon RX 570 (Polaris)</tspan></text>
+
+  <!-- Block utilization bar for GPU -->
+  <text x="56" y="302" font-family="monospace" font-size="13" fill="#d4d4d4">
+    │   <tspan fill="#f5a623">██████████████████████████████</tspan><tspan fill="#3e3e42">░░░░░░░░░</tspan> <tspan fill="#f5a623" font-size="11">74%</tspan>
+  </text>
+
+  <text x="56" y="326" font-family="monospace" font-size="13" fill="#d4d4d4">│ <tspan fill="#4ec9b0">TOOL</tspan> <tspan fill="#9d9d9d">Clang 21.1.8 + LLD 21.1.8</tspan></text>
+
+  <text x="56" y="350" font-family="monospace" font-size="13" fill="#d4d4d4">│ <tspan fill="#9d9d9d">NIC</tspan>  <tspan fill="#9d9d9d">Realtek RTL8111 (r8169)</tspan></text>
+
+  <!-- Bottom border of hardware panel -->
+  <text x="50" y="368" font-family="monospace" font-size="14" fill="#f09040">└────────────────────────────────────────────────────┘</text>
+
+  <!-- Right side: large project name in VT323 + lightning bolt -->
+  <text x="740" y="285" font-family="'VT323', 'Courier New', monospace" font-size="60" font-weight="700" fill="#ffffff" letter-spacing="3" filter="url(#glow)">
+    oddnet
+  </text>
+  <text x="740" y="340" font-family="'VT323', 'Courier New', monospace" font-size="40" font-weight="700" fill="#f09040" letter-spacing="8" filter="url(#glow)">
+    kernel
+  </text>
+
+  <!-- Lightning bolt next to name -->
+  <g transform="translate(690, 252)" filter="url(#glow)">
+    <polygon points="18,0 4,32 14,32 8,48 28,24 18,24 22,0" fill="#f09040"/>
+  </g>
+
+  <!-- Small ascii art CPU in bottom right -->
+  <text x="1050" y="370" font-family="monospace" font-size="8" fill="#3e3e42">
+    <tspan x="1050" dy="0">  ┌────┐</tspan>
+    <tspan x="1050" dy="10">  │ ▓▓ │</tspan>
+    <tspan x="1050" dy="10">  └────┘</tspan>
+  </text>
+
+  <!-- Version watermark -->
+  <text x="1140" y="380" font-family="'Space Mono', monospace" font-size="9" fill="#3e3e42" text-anchor="end">v7.1.5-zen1</text>
+
+  <!-- Bottom rule -->
+  <text x="600" y="394" font-family="monospace" font-size="10" fill="#2d2d2d" text-anchor="middle">github.com/cpntodd/oddnetkernel</text>
+</svg>

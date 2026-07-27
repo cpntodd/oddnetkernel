@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=VT323&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+    </style>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1e1e"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="ensoGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f09040" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#f5a623" stop-opacity="0.25"/>
+    </linearGradient>
+    <linearGradient id="ensoStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f09040" stop-opacity="0.4"/>
+      <stop offset="35%" stop-color="#f5a623" stop-opacity="0.7"/>
+      <stop offset="65%" stop-color="#f09040" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#cc7722" stop-opacity="0.15"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid dots -->
+  <g fill="#2a2a2b" opacity="0.5">
+    <circle cx="60" cy="40" r="1"/><circle cx="120" cy="40" r="1"/><circle cx="180" cy="40" r="1"/><circle cx="240" cy="40" r="1"/><circle cx="300" cy="40" r="1"/><circle cx="360" cy="40" r="1"/><circle cx="420" cy="40" r="1"/><circle cx="480" cy="40" r="1"/><circle cx="540" cy="40" r="1"/><circle cx="600" cy="40" r="1"/><circle cx="660" cy="40" r="1"/><circle cx="720" cy="40" r="1"/><circle cx="780" cy="40" r="1"/><circle cx="840" cy="40" r="1"/><circle cx="900" cy="40" r="1"/><circle cx="960" cy="40" r="1"/><circle cx="1020" cy="40" r="1"/><circle cx="1080" cy="40" r="1"/><circle cx="1140" cy="40" r="1"/>
+    <circle cx="60" cy="80" r="1"/><circle cx="120" cy="80" r="1"/><circle cx="180" cy="80" r="1"/><circle cx="240" cy="80" r="1"/><circle cx="300" cy="80" r="1"/><circle cx="360" cy="80" r="1"/><circle cx="420" cy="80" r="1"/><circle cx="480" cy="80" r="1"/><circle cx="540" cy="80" r="1"/><circle cx="600" cy="80" r="1"/><circle cx="660" cy="80" r="1"/><circle cx="720" cy="80" r="1"/><circle cx="780" cy="80" r="1"/><circle cx="840" cy="80" r="1"/><circle cx="900" cy="80" r="1"/><circle cx="960" cy="80" r="1"/><circle cx="1020" cy="80" r="1"/><circle cx="1080" cy="80" r="1"/><circle cx="1140" cy="80" r="1"/>
+    <circle cx="60" cy="360" r="1"/><circle cx="120" cy="360" r="1"/><circle cx="180" cy="360" r="1"/><circle cx="240" cy="360" r="1"/><circle cx="300" cy="360" r="1"/><circle cx="360" cy="360" r="1"/><circle cx="420" cy="360" r="1"/><circle cx="480" cy="360" r="1"/><circle cx="540" cy="360" r="1"/><circle cx="600" cy="360" r="1"/><circle cx="660" cy="360" r="1"/><circle cx="720" cy="360" r="1"/><circle cx="780" cy="360" r="1"/><circle cx="840" cy="360" r="1"/><circle cx="900" cy="360" r="1"/><circle cx="960" cy="360" r="1"/><circle cx="1020" cy="360" r="1"/><circle cx="1080" cy="360" r="1"/><circle cx="1140" cy="360" r="1"/>
+  </g>
+
+  <!-- Zen Enso circle (large, faint, behind everything) -->
+  <g transform="translate(300, 200)" filter="url(#softGlow)">
+    <ellipse cx="0" cy="0" rx="230" ry="230" fill="url(#ensoGrad)"/>
+    <ellipse cx="0" cy="0" rx="230" ry="230" fill="none" stroke="url(#ensoStroke)" stroke-width="3"
+             stroke-dasharray="1100 340" stroke-dashoffset="-20"
+             stroke-linecap="round"/>
+  </g>
+
+  <!-- Small accent enso in corner -->
+  <g transform="translate(1080, 60)">
+    <ellipse cx="0" cy="0" rx="35" ry="35" fill="none" stroke="#f09040" stroke-opacity="0.2" stroke-width="1.5"
+             stroke-dasharray="150 70" stroke-linecap="round"/>
+  </g>
+
+  <!-- CPU Die pattern (AMD Zen+ CCX-inspired geometric) -->
+  <g transform="translate(90, 155)">
+    <!-- Outer die -->
+    <rect x="0" y="0" width="180" height="180" rx="4" ry="4" fill="none" stroke="#f09040" stroke-opacity="0.3" stroke-width="1.5"/>
+
+    <!-- CCX 0 (top-left quadrant) -->
+    <rect x="10" y="10" width="78" height="78" rx="2" ry="2" fill="none" stroke="#f09040" stroke-opacity="0.2" stroke-width="1"/>
+    <!-- Cores in CCX 0 (4 cores as small squares) -->
+    <rect x="18" y="18" width="28" height="28" rx="1" fill="#f09040" opacity="0.3"/>
+    <rect x="52" y="18" width="28" height="28" rx="1" fill="#f09040" opacity="0.2"/>
+    <rect x="18" y="52" width="28" height="28" rx="1" fill="#f09040" opacity="0.2"/>
+    <rect x="52" y="52" width="28" height="28" rx="1" fill="#f09040" opacity="0.25"/>
+
+    <!-- CCX 1 (top-right quadrant) -->
+    <rect x="92" y="10" width="78" height="78" rx="2" ry="2" fill="none" stroke="#f09040" stroke-opacity="0.2" stroke-width="1"/>
+    <rect x="100" y="18" width="28" height="28" rx="1" fill="#f09040" opacity="0.25"/>
+    <rect x="134" y="18" width="28" height="28" rx="1" fill="#f09040" opacity="0.2"/>
+    <rect x="100" y="52" width="28" height="28" rx="1" fill="#f09040" opacity="0.15"/>
+    <rect x="134" y="52" width="28" height="28" rx="1" fill="#f09040" opacity="0.2"/>
+
+    <!-- L3 Cache / IMC bar (bottom) -->
+    <rect x="10" y="92" width="160" height="12" rx="1" fill="#f09040" opacity="0.15"/>
+    <text x="90" y="101" font-family="'Space Mono', monospace" font-size="6" fill="#f09040" fill-opacity="0.4" text-anchor="middle">L3</text>
+
+    <!-- PCIe / IF lanes -->
+    <rect x="10" y="108" width="160" height="6" rx="1" fill="#f09040" opacity="0.1"/>
+    <rect x="10" y="118" width="160" height="6" rx="1" fill="#f09040" opacity="0.1"/>
+    <rect x="10" y="128" width="160" height="6" rx="1" fill="#f09040" opacity="0.1"/>
+
+    <!-- IMC labels -->
+    <text x="18" y="150" font-family="'Space Mono', monospace" font-size="6" fill="#f09040" fill-opacity="0.35">IMC</text>
+    <text x="148" y="150" font-family="'Space Mono', monospace" font-size="6" fill="#f09040" fill-opacity="0.35" text-anchor="end">IMC</text>
+  </g>
+
+  <!-- Die label -->
+  <text x="180" y="360" font-family="'Space Mono', monospace" font-size="9" fill="#f09040" fill-opacity="0.35" text-anchor="middle">Ryzen 5 2600 — Zen+ CCX</text>
+
+  <!-- Tux silhouette (small, bottom-right corner of die area) -->
+  <g transform="translate(220, 280) scale(0.35)" opacity="0.25">
+    <!-- Simplified Tux outline -->
+    <ellipse cx="0" cy="30" rx="30" ry="28" fill="#f09040"/>
+    <ellipse cx="0" cy="30" rx="20" ry="22" fill="#252526"/>
+    <!-- Eyes -->
+    <ellipse cx="-8" cy="18" rx="4" ry="5" fill="#f09040"/>
+    <ellipse cx="8" cy="18" rx="4" ry="5" fill="#f09040"/>
+    <circle cx="-6" cy="16" r="2" fill="#252526"/>
+    <circle cx="10" cy="16" r="2" fill="#252526"/>
+    <!-- Beak -->
+    <polygon points="0,22 -6,28 6,28" fill="#f09040"/>
+    <!-- Feet -->
+    <ellipse cx="-14" cy="58" rx="10" ry="6" fill="#f09040"/>
+    <ellipse cx="14" cy="58" rx="10" ry="6" fill="#f09040"/>
+  </g>
+
+  <!-- GPU die (smaller, offset) -->
+  <g transform="translate(110, 110) scale(0.45)">
+    <rect x="0" y="0" width="120" height="120" rx="3" fill="none" stroke="#f5a623" stroke-opacity="0.2" stroke-width="1.5"/>
+    <!-- Shader engines -->
+    <rect x="8" y="8" width="48" height="48" rx="1" fill="#f5a623" opacity="0.15"/>
+    <rect x="64" y="8" width="48" height="48" rx="1" fill="#f5a623" opacity="0.12"/>
+    <rect x="8" y="64" width="48" height="48" rx="1" fill="#f5a623" opacity="0.12"/>
+    <rect x="64" y="64" width="48" height="48" rx="1" fill="#f5a623" opacity="0.15"/>
+    <text x="60" y="55" font-family="'Space Mono', monospace" font-size="7" fill="#f5a623" fill-opacity="0.3" text-anchor="middle">Polaris</text>
+  </g>
+
+  <!-- Right side: project identity -->
+  <!-- Lightning bolt -->
+  <g transform="translate(680, 155)" filter="url(#glow)">
+    <polygon points="20,0 4,36 16,36 8,54 30,20 18,20 24,0" fill="#f09040"/>
+  </g>
+
+  <!-- Project name -->
+  <text x="745" y="195" font-family="'VT323', 'Courier New', monospace" font-size="48" font-weight="700" fill="#ffffff" letter-spacing="2">
+    oddnetkernel
+  </text>
+
+  <!-- Accent rule -->
+  <line x1="745" y1="216" x2="1100" y2="216" stroke="#f09040" stroke-opacity="0.5" stroke-width="1.5"/>
+
+  <!-- Tagline -->
+  <text x="745" y="240" font-family="'Space Mono', monospace" font-size="12" fill="#9d9d9d">
+    Zen kernel for AMD desktops
+  </text>
+  <text x="745" y="260" font-family="'Space Mono', monospace" font-size="11" fill="#6a6a6a">
+    Debian 13  —  Clang 21 + LLD  —  EEVDF + PREEMPT_DYNAMIC
+  </text>
+
+  <!-- Hardware badges -->
+  <g transform="translate(745, 285)">
+    <rect x="0" y="0" width="80" height="24" rx="3" fill="#2d2d2d" stroke="#3e3e42" stroke-width="0.5"/>
+    <text x="40" y="16" font-family="'Space Mono', monospace" font-size="8" fill="#f09040" text-anchor="middle">Zen+</text>
+
+    <rect x="90" y="0" width="70" height="24" rx="3" fill="#2d2d2d" stroke="#3e3e42" stroke-width="0.5"/>
+    <text x="125" y="16" font-family="'Space Mono', monospace" font-size="8" fill="#f5a623" text-anchor="middle">Polaris</text>
+
+    <rect x="170" y="0" width="80" height="24" rx="3" fill="#2d2d2d" stroke="#3e3e42" stroke-width="0.5"/>
+    <text x="210" y="16" font-family="'Space Mono', monospace" font-size="8" fill="#d4d4d4" text-anchor="middle">Clang 21</text>
+
+    <rect x="260" y="0" width="55" height="24" rx="3" fill="#2d2d2d" stroke="#3e3e42" stroke-width="0.5"/>
+    <text x="287" y="16" font-family="'Space Mono', monospace" font-size="8" fill="#9d9d9d" text-anchor="middle">x86_64</text>
+  </g>
+
+  <!-- Bottom rule -->
+  <line x1="50" y1="380" x2="1150" y2="380" stroke="#3e3e42" stroke-width="0.5"/>
+  <text x="600" y="394" font-family="'Space Mono', monospace" font-size="8" fill="#3e3e42" text-anchor="middle">github.com/cpntodd/oddnetkernel</text>
+</svg>

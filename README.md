@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner.svg">
+  <img alt="oddnetkernel — Zen kernel for AMD desktops" src="assets/banner.svg" width="100%">
+</picture>
+
 # oddnetkernel
 
 Custom Linux kernel for my AMD desktop. Ryzen 5 2600 (Zen+), Radeon RX 570 (Polaris), Debian 13.

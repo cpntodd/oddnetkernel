@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=VT323&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+    </style>
+    <linearGradient id="progressGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f09040"/>
+      <stop offset="100%" stop-color="#f5a623"/>
+    </linearGradient>
+    <linearGradient id="windowBorder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3e3e42"/>
+      <stop offset="100%" stop-color="#2a2a2b"/>
+    </linearGradient>
+    <linearGradient id="bannerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a1a1a" stop-opacity="0.97"/>
+      <stop offset="50%" stop-color="#1e1e1e" stop-opacity="0.97"/>
+      <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0.97"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Subtle noise texture -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.04"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" fill="#1e1e1e"/>
+  <rect width="1200" height="400" filter="url(#noise)" opacity="1"/>
+
+  <!-- Terminal window shadow -->
+  <rect x="54" y="34" width="1100" height="340" rx="10" ry="10" fill="#111111" opacity="0.4"/>
+
+  <!-- Terminal window -->
+  <rect x="50" y="30" width="1100" height="340" rx="10" ry="10" fill="#252526" stroke="url(#windowBorder)" stroke-width="1"/>
+
+  <!-- Title bar -->
+  <rect x="50" y="30" width="1100" height="34" rx="10" ry="10" fill="#2d2d2d"/>
+  <rect x="50" y="44" width="1100" height="20" fill="#2d2d2d"/>
+
+  <!-- Traffic light dots -->
+  <circle cx="72" cy="47" r="5.5" fill="#ff5f57"/>
+  <circle cx="90" cy="47" r="5.5" fill="#febc2e"/>
+  <circle cx="108" cy="47" r="5.5" fill="#28c840"/>
+
+  <!-- Title bar text -->
+  <text x="130" y="52" font-family="'Space Mono', monospace" font-size="10.5" fill="#9d9d9d">oddnetkernel@amd-desktop: ~</text>
+
+  <!-- Command line 1: prompt + sudo apt install -->
+  <text x="72" y="98" font-family="'Space Mono', monospace" font-size="13" fill="#9d9d9d">
+    <tspan fill="#28c840">$</tspan> sudo apt install <tspan fill="#f09040" font-weight="700">oddnetkernel-zen</tspan>
+  </text>
+
+  <!-- Command line 2: reading package lists -->
+  <text x="72" y="124" font-family="'Space Mono', monospace" font-size="11.5" fill="#6a6a6a">Reading package lists<tspan font-size="8">...</tspan> Done</text>
+
+  <!-- Command line 3: building dependency tree -->
+  <text x="72" y="146" font-family="'Space Mono', monospace" font-size="11.5" fill="#6a6a6a">Building dependency tree<tspan font-size="8">...</tspan> Done</text>
+
+  <!-- Command line 4: reading state -->
+  <text x="72" y="168" font-family="'Space Mono', monospace" font-size="11.5" fill="#6a6a6a">Reading state information<tspan font-size="8">...</tspan> Done</text>
+
+  <!-- Command line 5: summary -->
+  <text x="72" y="200" font-family="'Space Mono', monospace" font-size="12" fill="#d4d4d4">The following NEW packages will be installed:</text>
+  <text x="84" y="220" font-family="'Space Mono', monospace" font-size="12" fill="#c0c0c0">  linux-image-7.1.5-zen1-oddnetkernel-zen</text>
+  <text x="84" y="240" font-family="'Space Mono', monospace" font-size="12" fill="#c0c0c0">  linux-headers-7.1.5-zen1-oddnetkernel-zen</text>
+
+  <!-- Progress bar background -->
+  <rect x="72" y="268" width="520" height="18" rx="3" ry="3" fill="#3e3e42"/>
+
+  <!-- Progress bar fill (~87%) -->
+  <rect x="72" y="268" width="452" height="18" rx="3" ry="3" fill="url(#progressGrad)"/>
+
+  <!-- Progress percentage -->
+  <text x="602" y="282" font-family="'Space Mono', monospace" font-size="12" fill="#f09040" font-weight="700">87%</text>
+
+  <!-- Cursor blinking (above identity bar) -->
+  <rect x="72" y="292" width="8" height="16" fill="#f09040" filter="url(#glow)">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Project identity banner bar (at bottom of terminal) -->
+  <rect x="50" y="312" width="1100" height="58" rx="0" ry="0" fill="url(#bannerGrad)"/>
+  <rect x="50" y="312" width="1100" height="58" rx="0" ry="0" filter="url(#noise)" opacity="0.5"/>
+  <line x1="52" y1="312" x2="1148" y2="312" stroke="#f09040" stroke-opacity="0.3" stroke-width="0.5"/>
+
+  <!-- Lightning bolt icon (center of banner bar) -->
+  <g transform="translate(660, 317)" filter="url(#softGlow)">
+    <polygon points="15,0 2,30 13,30 8,44 26,14 15,14 19,0" fill="#f09040"/>
+  </g>
+
+  <!-- Project name -->
+  <text x="712" y="353" font-family="'VT323', 'Courier New', monospace" font-size="38" font-weight="700" fill="#ffffff" letter-spacing="1.5">
+    oddnetkernel
+  </text>
+
+  <!-- Tagline -->
+  <text x="712" y="366" font-family="'Space Mono', monospace" font-size="9.5" fill="#9d9d9d" letter-spacing="0.5">
+    Zen kernel for AMD desktops <tspan fill="#6a6a6a">—</tspan> Debian 13 <tspan fill="#6a6a6a">—</tspan> Clang 21 + LLD
+  </text>
+
+  <!-- Kernel version badge -->
+  <rect x="1070" y="294" width="72" height="16" rx="3" fill="#252526" stroke="#3e3e42" stroke-width="0.5"/>
+  <text x="1106" y="306" font-family="'Space Mono', monospace" font-size="8" fill="#6a6a6a" text-anchor="middle">v7.1.5-zen1</text>
+</svg>
