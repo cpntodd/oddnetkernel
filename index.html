@@ -82,6 +82,19 @@
             margin: 16px auto 0;
         }
 
+        /* ── Badges ──────────────────────────── */
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        .badges img {
+            height: 20px;
+            display: block;
+        }
+
         /* ── Navigation ───────────────────────── */
         nav {
             display: flex;
@@ -309,6 +322,13 @@
             Custom Linux kernel for AMD Zen+/Polaris hardware on Debian.
             Built from mainline 7.1.5 with the Zen patchset, compiled with Clang 21 + LLD.
         </p>
+        <div class="badges">
+            <img src="https://img.shields.io/badge/kernel.org%20stable-7.1.5-007ec6?style=flat-square&logo=linux&logoColor=white" alt="kernel.org stable 7.1.5">
+            <img src="https://img.shields.io/badge/compiler-Clang%2021%20%2B%20LLD-2E6B9E?style=flat-square&logo=llvm&logoColor=white" alt="Clang 21 + LLD">
+            <img src="https://img.shields.io/badge/platform-Debian%2013%20(trixie)-A81D33?style=flat-square&logo=debian&logoColor=white" alt="Debian 13 (trixie)">
+            <img src="https://img.shields.io/badge/arch-amd64-9d9d9d?style=flat-square" alt="amd64">
+            <img src="https://img.shields.io/badge/scheduler-EEVDF%20%2B%20PREEMPT__DYNAMIC-f09040?style=flat-square" alt="EEVDF + PREEMPT_DYNAMIC">
+        </div>
     </div>
 </header>
 
@@ -317,7 +337,7 @@
     <a href="#features">Features</a>
     <a href="#tuning">Tuning</a>
     <a href="#build">Build</a>
-    <a href="https://github.com/cpntodd/oddnetkernel">GitHub</a>
+    <a href="#links">Links</a>
 </nav>
 
 <!-- ════════════════ INSTALL ════════════════ -->
@@ -380,6 +400,24 @@ sudo reboot
                 </ul>
             </div>
         </div>
+
+        <table style="margin-top:36px;">
+            <thead>
+                <tr>
+                    <th>Spec</th>
+                    <th>Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Base</td>      <td>Linux 7.1.5 (kernel.org stable)</td></tr>
+                <tr><td>Patches</td>   <td><a href="https://github.com/zen-kernel/zen-kernel">Zen kernel</a> v7.1.5-zen1</td></tr>
+                <tr><td>Compiler</td>  <td>Clang 21.1.8 + LLD 21.1.8</td></tr>
+                <tr><td>HW Target</td> <td>AMD Ryzen 5 2600, Radeon RX 570/580</td></tr>
+                <tr><td>OS Target</td> <td>Debian 13 (Trixie), amd64</td></tr>
+                <tr><td>Package</td>   <td>.deb via APT repo</td></tr>
+                <tr><td>License</td>   <td>GPL-2.0-only</td></tr>
+            </tbody>
+        </table>
     </div>
 </section>
 
@@ -423,6 +461,20 @@ sudo reboot
                 <tr><td>Release</td>       <td><a href="https://github.com/cpntodd/oddnetkernel/releases/tag/v1">v1</a> — 2026-07-26</td></tr>
             </tbody>
         </table>
+    </div>
+</section>
+
+<!-- ════════════════ LINKS ════════════════ -->
+<section id="links">
+    <div class="container">
+        <h2>Additional Links</h2>
+        <ul style="list-style:none;padding:0;font-family:var(--font-body);font-size:0.94rem;line-height:2;">
+            <li><a href="#install">Install</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#tuning">Performance Tuning</a></li>
+            <li><a href="#build">Current Build</a></li>
+            <li><a href="https://github.com/cpntodd/oddnetkernel">GitHub</a></li>
+        </ul>
     </div>
 </section>
 
