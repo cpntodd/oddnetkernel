@@ -1,14 +1,14 @@
 Package: linux-headers-7.1.5-zen1-oddnetkernel-zen
 Source: linux-upstream
-Version: 7.1.5-zen1-2
+Version: 7.1.5-zen1-3
 Architecture: amd64
 Maintainer: oddsoul <oddsoul@beanbox>
-Installed-Size: 56520
-Filename: repo/pool/main/linux-headers-7.1.5-zen1-oddnetkernel-zen_7.1.5-zen1-2_amd64.deb
-Size: 9631448
-MD5sum: ef3cf2b8f5037b036499210dec2963e7
-SHA1: 1c7e9e03b5190f64f1b81e63eaa26262894b272c
-SHA256: aa64a4b59dd1c755b92c05976dd2f2e93236b05b3cf679e67543ae95ea24c50d
+Installed-Size: 56563
+Filename: repo/pool/main/linux-headers-7.1.5-zen1-oddnetkernel-zen_7.1.5-zen1-3_amd64.deb
+Size: 9638608
+MD5sum: 9bd1eaaf687d913a7c05ee3ffae22e08
+SHA1: b776c2180e600e5e3698fd336acaff83591bf5fe
+SHA256: 0f81b9459c3cddc59222cd01c1af5de0ebc98611fe03066335c07cdd9c3e0f10
 Section: kernel
 Priority: optional
 Homepage: https://www.kernel.org/
@@ -19,19 +19,39 @@ Description: Linux kernel headers for 7.1.5-zen1-oddnetkernel-zen on amd64
 
 Package: linux-image-7.1.5-zen1-oddnetkernel-zen
 Source: linux-upstream
-Version: 7.1.5-zen1-2
+Version: 7.1.5-zen1-3
 Architecture: amd64
 Maintainer: oddsoul <oddsoul@beanbox>
-Installed-Size: 32368
-Filename: repo/pool/main/linux-image-7.1.5-zen1-oddnetkernel-zen_7.1.5-zen1-2_amd64.deb
-Size: 23933100
-MD5sum: 327f923029252438946d7b026e03435b
-SHA1: fc15eaa3d690e9c47879cc9b9549f65853d228d0
-SHA256: 0cff50815455e78b5243a47da8268f91bc76f76dd1ad025fe93bb8ae447158e4
+Installed-Size: 34514
+Filename: repo/pool/main/linux-image-7.1.5-zen1-oddnetkernel-zen_7.1.5-zen1-3_amd64.deb
+Size: 25987892
+MD5sum: 445c68f857dfa41cac3259bec5dbbf37
+SHA1: f9b966806c796b4475740155f42b6b2c8b51c40c
+SHA256: 850150ce078a0284c99f128519de2a435d2b6b7881e082c0a3ca9bfe631be9f7
 Section: kernel
 Priority: optional
 Homepage: https://www.kernel.org/
 Description: Linux kernel, version 7.1.5-zen1-oddnetkernel-zen
  This package contains the Linux kernel, modules and corresponding other
  files, version: 7.1.5-zen1-oddnetkernel-zen.
+
+Package: linux-libc-dev
+Source: linux-upstream
+Version: 7.1.5-zen1-3
+Architecture: amd64
+Maintainer: oddsoul <oddsoul@beanbox>
+Installed-Size: 7716
+Provides: linux-kernel-headers
+Filename: repo/pool/main/linux-libc-dev_7.1.5-zen1-3_amd64.deb
+Size: 1496624
+MD5sum: 334b9f15380ac85624ec3fec3b951022
+SHA1: 0a4e0a73fe20d7a2c7e122bcf0d65add9b99be1e
+SHA256: 5446716963d0cea73aca0bde4cb9b648d94e9d6d2668e5aba8d3ede80c9f78fd
+Section: devel
+Priority: optional
+Multi-Arch: same
+Homepage: https://www.kernel.org/
+Description: Linux support headers for userspace development
+ This package provides userspaces headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system libraries.
 
