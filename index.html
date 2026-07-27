@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oddnetkernel — Oddsoul's custom Zen kernel for Debian</title>
+    <title>oddnetkernel — custom Zen kernel for AMD desktops on Debian</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet">
@@ -296,9 +296,8 @@
         <span class="icon">⚡</span>
         <h1>oddnet<span>kernel</span></h1>
         <p class="tagline">
-            Oddsoul's custom Linux kernel — tuned to squeeze maximum performance
-            from AMD Zen/Polaris hardware on Debian. Built with Clang 21 and
-            Zen-kernel interactive patches.
+            Custom Linux kernel for AMD Zen+/Polaris hardware on Debian.
+            Built from mainline 7.1.5 with the Zen patchset, compiled with Clang 21 + LLD.
         </p>
     </div>
 </header>
@@ -349,25 +348,25 @@ sudo reboot
 
         <div class="feature-grid">
             <div class="feature-card">
-                <h3>🧠 Zen Interactive Tuning</h3>
-                <p>Zen-kernel patchset tunes for desktop responsiveness — process scheduling, memory reclaim, I/O, and CPU frequency scaling all favour low-latency interactivity over throughput.</p>
+                <h3>Zen Patchset</h3>
+                <p>The <a href="https://github.com/zen-kernel/zen-kernel">Zen kernel</a> applies scheduling, memory reclaim, and I/O patches that bias toward lower latency. Under mixed desktop load, interactive tasks get CPU time sooner than with Debian's stock config.</p>
             </div>
             <div class="feature-card">
-                <h3>🎯 AMD Zen+ / Polaris</h3>
-                <p>Built on and for Ryzen 5 2600 (Zen+) and Radeon RX 570/580 (Polaris). Full <code>amdgpu</code> with SI/CIK and Display Core enabled.</p>
+                <h3>AMD Zen+ / Polaris</h3>
+                <p>Configured for Ryzen 5 2600 (Family 17h) and Radeon RX 570/580. Full <code>amdgpu</code> with Southern Islands, Sea Islands, and Display Core for HDMI/DP audio.</p>
             </div>
             <div class="feature-card">
-                <h3>🔧 Clang 21 + LLD</h3>
-                <p>Compiled with LLVM/Clang 21.1.8 and LLD 21 — a thinner, modern toolchain producing a fast-linking kernel.</p>
+                <h3>Clang 21 + LLD</h3>
+                <p>Compiled with LLVM/Clang 21.1.8 instead of GCC. No particular advantage — I wanted to confirm the LLVM build path works on 7.x, and it does. <code>bindeb-pkg</code> with <code>LLVM=1</code> is straightforward.</p>
             </div>
             <div class="feature-card">
-                <h3>📦 Broad Hardware Support</h3>
+                <h3>What's Enabled</h3>
                 <ul>
-                    <li>CIFS/SMB, Btrfs, XFS, NTFS3, exFAT, OverlayFS</li>
+                    <li>Filesystems: Btrfs, XFS, NTFS3, exFAT, CIFS/SMB, OverlayFS</li>
                     <li>NFS client &amp; server</li>
-                    <li>WireGuard, Bridge, VXLAN</li>
-                    <li>KVM, VIRTIO, NVMe</li>
-                    <li>Realtek r8169 (built-in)</li>
+                    <li>WireGuard, bridge, VXLAN</li>
+                    <li>KVM + VIRTIO, NVMe built-in</li>
+                    <li>Realtek r8169 built-in (not a module)</li>
                 </ul>
             </div>
         </div>
@@ -395,7 +394,7 @@ sudo reboot
             </tbody>
         </table>
 
-        <p class="subtitle">Zen-kernel interactive tuning adjusts: block layer (I/O scheduler selection), virtual memory (watermark boost, hugepage reclaim), CPUFreq governor thresholds, and split-lock detection — all biased toward desktop responsiveness.</p>
+        <p class="subtitle">These are the Zen-kernel tunables that differ from Debian's stock config. The Zen patchset also adjusts watermark boost factor, hugepage reclaim, and CPUFreq governor thresholds — all in the direction of lower scheduling latency under mixed desktop workloads.</p>
     </div>
 </section>
 

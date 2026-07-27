@@ -1,20 +1,20 @@
-# ⚡ oddnetkernel
+# oddnetkernel
 
-**Oddsoul's custom Linux kernel — tuned to squeeze maximum performance from AMD Zen/Polaris hardware on Debian.**
+Custom Linux kernel for my AMD desktop. Ryzen 5 2600 (Zen+), Radeon RX 570 (Polaris), Debian 13.
 
-Built from mainline Linux with Zen-kernel interactive tuning patches and compiled with Clang 21 + LLD. Every option is chosen with one goal: make a Ryzen desktop running Debian feel as responsive and fast as the silicon allows.
+Built from mainline 7.1.5 with the Zen kernel patchset, compiled with Clang 21 + LLD. I run this daily — it's tuned for what I use, not for everyone.
 
 ---
 
-## INSTALL
+## Install
 
-**Debian 13 (Trixie):**
+Debian 13 (Trixie), amd64 only:
 
 ```bash
 curl -s 'https://raw.githubusercontent.com/cpntodd/oddnetkernel/master/install-oddnetkernel.sh' | sudo bash
 ```
 
-Or manually:
+Or step by step:
 
 ```bash
 # Add the apt repo
@@ -30,51 +30,64 @@ sudo reboot
 
 ---
 
-## MAJOR FEATURES
+## What's Changed from Debian's Stock Kernel
 
-### 🧠 Zen Interactive Tuning
-Zen-kernel patchset tunes the kernel for desktop responsiveness — process scheduling, memory reclaim, I/O, and CPU frequency scaling are all adjusted to favor low-latency interactivity over throughput.
+### Zen patchset
 
-### 🎯 AMD Zen+ / Polaris Optimized
-Built on and for AMD hardware: Ryzen 5 2600 (Zen+) CPU and Radeon RX 570/580 (Polaris/Ellesmere) GPU. Kernel configured with full `amdgpu` driver, Southern Islands (SI) and Sea Islands (CIK) support, and Display Core (DC) for HDMI/DP audio.
+The [Zen kernel](https://github.com/zen-kernel/zen-kernel) applies patches that adjust scheduling, memory reclaim, and I/O decisions toward lower latency. The most noticeable effect on a desktop is that interactive tasks (browser, terminal, editor) get CPU time sooner under mixed load.
 
-### ⚙️ Performance Tuning
+Specific tunables the Zen patchset exposes or changes:
 
-| Setting | Value |
-|---|---|
-| **CPU Scheduler** | EEVDF (Earliest Eligible Virtual Deadline First) |
-| **Preemption** | `PREEMPT_DYNAMIC` — lazy preemption for desktop |
-| **Timer tick** | 1000 Hz — low-jitter scheduling |
-| **I/O Scheduler** | mq-deadline (multiqueue-aware) |
-| **TCP Congestion** | CUBIC |
+- `CONFIG_HZ=1000` — faster timer tick than Debian's default 250 Hz
+- Preemption model set to `PREEMPT_DYNAMIC` with lazy preemption
+- Kyber I/O scheduler available alongside mq-deadline
+- BBRv2 TCP congestion control available (though I use CUBIC)
+- Various memory management watermark and reclaim aggressiveness changes from upstream Zen
 
-### 🔧 Built with Clang 21 + LLD
-Compiled with LLVM/Clang 21.1.8 and linked with LLD 21 — producing a thinner, faster-linking kernel than GCC builds.
+### Clang toolchain
 
-### 📦 Broad Hardware & Filesystem Support
+I build with Clang 21 instead of GCC. No ideological reason — I wanted to see if the LLVM build worked on 7.x, and it does. The kernel builds and boots fine. `bindeb-pkg` with `LLVM=1` Just Works.
 
-| Category | What's Included |
-|---|---|
-| **Filesystems** | CIFS/SMB, Btrfs, XFS, NTFS3, exFAT, OverlayFS, NFS client & server |
-| **Networking** | WireGuard, Bridge, VXLAN |
-| **Virtualization** | KVM, VIRTIO |
-| **GPU** | AMDGPU (RX 400/500 series, SI, CIK, DC) |
-| **Network** | Realtek r8169 (built-in) |
-| **Storage** | NVMe (built-in), SATA |
-| **Debian base** | All expected Debian 13 modules included |
+### Hardware config
+
+Enabled everything my desktop actually has:
+
+- **CPU:** `CONFIG_MZEN` (Family 17h / Zen+), with `AMD_PSTATE` and `X86_AMD_FREQ_SENSITIVITY`
+- **GPU:** Full `amdgpu` driver including Southern Islands and Sea Islands (older GCN cards), Display Core for HDMI/DP audio
+- **NIC:** Realtek r8169 built-in (not as a module — avoids initramfs ordering issues I've hit on this board)
+- **Storage:** NVMe built-in, SATA AHCI
+- **Filesystems in use:** Btrfs, XFS, NTFS3, exFAT, CIFS/SMB, OverlayFS, NFS
+- **Networking:** WireGuard, bridge, VXLAN
+- **Virtualization:** KVM + VIRTIO
+
+What I left OUT: WiFi drivers I don't use, Bluetooth, InfiniBand, most enterprise RAID cards, sound drivers beyond HDMI/DP audio, and every filesystem I've never touched.
 
 ---
 
-## Current Build: `7.1.5-zen1-oddnetkernel-zen`
+## Kernel Config Summary
+
+| Setting | Value |
+|---|---|
+| CPU Scheduler | EEVDF |
+| Preemption | `PREEMPT_DYNAMIC` (lazy) |
+| Timer Frequency | 1000 Hz |
+| I/O Scheduler | mq-deadline |
+| TCP Congestion | CUBIC |
+
+---
+
+## Current Build
 
 | | |
 |---|---|
-| **Base** | Linux 7.1.5 |
-| **Patches** | Zen kernel v7.1.5-zen1 |
-| **Compiler** | Clang 21.1.8 (LLVM 21) |
-| **Linker** | LLD 21.1.8 |
-| **Hardware** | AMD Ryzen 5 2600, Radeon RX 570/580, RTL8111 NIC, NVMe |
-| **OS target** | Debian 13 (Trixie), amd64 |
+| Version | `7.1.5-zen1-oddnetkernel-zen` |
+| Base | Linux 7.1.5 |
+| Patches | Zen kernel v7.1.5-zen1 |
+| Compiler | Clang 21.1.8 (LLVM 21) |
+| Linker | LLD 21.1.8 |
+| Hardware target | Ryzen 5 2600, RX 570/580, RTL8111, NVMe |
+| OS target | Debian 13 (Trixie), amd64 |
+| Release | [v1](https://github.com/cpntodd/oddnetkernel/releases/tag/v1) — 2026-07-26 |
 
 ---
 
@@ -84,29 +97,23 @@ Compiled with LLVM/Clang 21.1.8 and linked with LLD 21 — producing a thinner, 
 # Clone zen-kernel
 git clone --depth 1 --branch v7.1.5-zen1 https://github.com/zen-kernel/zen-kernel.git
 
-# Copy config
+# Copy my config
 cp config-7.1.5-zen1-oddnetkernel-zen linux-7.1.5/.config
 
 # Build deps (Debian)
 sudo apt install clang-21 lld-21 llvm-21 build-essential flex bison \
   libelf-dev libssl-dev libncurses-dev bc rsync cpio dwarves
 
-# Build as .deb packages
+# Build .deb packages
 cd linux-7.1.5
 export PATH="/usr/lib/llvm-21/bin:$PATH"
 make LLVM=1 olddefconfig
 make LLVM=1 bindeb-pkg -j$(nproc)
-# Packages appear in ../
+# .deb packages land in ../
 ```
 
 ---
 
-## Release History
-
-| Version | Kernel | Date | |
-|---|---|---|---|
-| [v1](https://github.com/cpntodd/oddnetkernel/releases/tag/v1) | 7.1.5-zen1 | 2026-07-26 | Clang 21, initial release |
-
-
 ## Previous Builds
-- 7.1.3-custom-zen (GCC 14.2.0)
+
+- `7.1.3-custom-zen` — GCC 14.2.0, same Zen patch lineage, no longer packaged
