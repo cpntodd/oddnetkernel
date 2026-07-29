@@ -1,24 +1,24 @@
 Architectures: amd64
 Codename: trixie
 Components: main
-Date: Mon, 27 Jul 2026 12:21:47 +0000
+Date: Wed, 29 Jul 2026 00:38:58 +0000
 Description: Oddsoul's custom Zen kernel for Debian
 Label: oddnetkernel
 Origin: oddnetkernel
 Suite: stable
 MD5Sum:
- 6b669a9ec8587e98a92043ee57c345d5              200 Release
- 5ef563983788c46312452927eac6f241             2146 main/binary-amd64/Packages
- d50e70a5c2b2aac36ca2bb3065ffdcff              855 main/binary-amd64/Packages.gz
+ 2aee3893ef90999ae710083fe8302603              200 Release
+ 98a16d012373fc37d086df21e3c2a9bc             2146 main/binary-amd64/Packages
+ 07d1c0a905139c0fac70a36323de779e              857 main/binary-amd64/Packages.gz
 SHA1:
- fe5b64ad7ee21590731405b9c3866b4cc15c7110              200 Release
- 0cdffd29f608d0de8f44320ecf96c74a03b65663             2146 main/binary-amd64/Packages
- 8936b80aceaa7188a5b97538d67eb418b78a7212              855 main/binary-amd64/Packages.gz
+ 2c9678c8a911ec6cf6cd082381b30c51a69a0e98              200 Release
+ 4cff404533aaa2fb91ee486aed9a450eac69459d             2146 main/binary-amd64/Packages
+ e662a709ef3d792133f2227614e8a0266368f83c              857 main/binary-amd64/Packages.gz
 SHA256:
- 3ee89e0069b0d72d061e48a06ec419c808af6c3943009837e684f6a10872d626              200 Release
- e4391ebb70844c6e2e3102c8d53a37d32d334af8b23cb88eb6ac67c51d54db26             2146 main/binary-amd64/Packages
- 310ea30d4f50aadc50f05d08639c0df8fd5873fedae82e581338f741d608a9cc              855 main/binary-amd64/Packages.gz
+ a0116f3a13a27ff358d46dff305974913c4b3bdbe91ed84f81011143148734a9              200 Release
+ 05e67f55bed4c32e1712fe64f0c8e5640f73d709687a2f002629b39bec87970f             2146 main/binary-amd64/Packages
+ 45ac769eb4e21fcd10ef7e7f60485eaf6388d1077be331bd31aadb4433163431              857 main/binary-amd64/Packages.gz
 SHA512:
- 16fa7c1aa4ec4c0687dea367519888e4cac347efaf78ffdacce25304856e83b1d26adc8f7903029cf2f20cd108fd87d884431889f553c0c76f60e955d10b2544              200 Release
- 0c4c5276d89c1917c85d265bca1d9081d9fc12e4d29c633195c7da9a59b6a65801693b333c66151817fa07c6765788bc98a93f2459541f9901da289b1e7c0bc8             2146 main/binary-amd64/Packages
- bc092bf1237de0ae7ef2d5379b4df01edae4f4d86964918fd8980671115b8fef01cea0371a85db4ef4e79fa17b522f2e9b731b6e11b65a8145b7df9d828006cc              855 main/binary-amd64/Packages.gz
+ 91ec2a2d9282e9d9d5b5d154865c9a8b03fad760509135243633cea6602755d61f198589dd45283230c5b94eb256d0620b384ff0eece42c3fde4dc6c5501e93a              200 Release
+ e0c54e9ec2c2b5dc0e364292db2e8841e4e951ef22ed668e0ef074803e4d1393fb2a5e8f83dcfb93a7954818c804a30faf4f88b30dd2f675dfa41e07245ec906             2146 main/binary-amd64/Packages
+ d9fea3f86f1be3fb15d401038b3cbf61e1a828749d967f6e6f57d0e27f224a332897394a0e7326c2644508abd1d19f45179093c8b3e5aed9037a534faf008d16              857 main/binary-amd64/Packages.gz
